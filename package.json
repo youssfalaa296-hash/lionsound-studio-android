@@ -1,0 +1,38 @@
+{
+  "name": "luxor-pharaoh-day",
+  "version": "5.3.1",
+  "private": true,
+  "packageManager": "npm@11.19.0",
+  "engines": {
+    "node": "24.x",
+    "npm": ">=11 <12"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "verify:project": "node scripts/verify-project.mjs",
+    "verify:lockfile": "node scripts/verify-lockfile.mjs",
+    "verify": "npm run verify:project && npm run verify:lockfile && npm run verify:freshness && npm run lint && npm run typecheck",
+    "preflight": "npm run verify",
+    "verify:freshness": "node scripts/check-freshness.mjs"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "next": "16.4.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^10.11.0",
+    "eslint-config-next": "16.4.0",
+    "typescript": "^5.9.0"
+  }
+}
